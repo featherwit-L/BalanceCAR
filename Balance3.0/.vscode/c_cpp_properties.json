@@ -1,0 +1,29 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [		//*******关键位置，设置include路径***********
+                "${workspaceFolder}/**",
+                "C:\\Keil_v5\\ARM\\ARMCC\\include"		//********这个设置为你的MDK安装路径下对应目录就好*****
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE",
+                "__CC_ARM",		//*******这里必须，与前面设置的MDK路径对应，我们使用的是ARMCC，其实还有ARMCLANG，这就不用管了***********
+                "USE_STDPERIPH_DRIVER",	//这个设置时为了能够使用标准库，你用HAL库的话这里需要修改，简单的方式就是将MDK工程模板打开
+                                        //将PreProcesser Symbols里的参数导入这里就好*******
+                "STM32F10X_HD"  //同上
+            ],
+            "intelliSenseMode": "msvc-x64",
+            "cppStandard": "c++17",
+            "cStandard": "c11",
+            "browse": {
+                "path": [
+                    "${workspaceFolder}"	//*******这里设置的include路径会自动迭代搜索，所以简单点可以直接将工作空间设置上去*********
+                ]
+            }
+        }
+    ],
+    "version": 4
+}
